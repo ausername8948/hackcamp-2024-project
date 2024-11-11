@@ -1,27 +1,26 @@
 import React from 'react';
-import './CardSidebar.css';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import MessageIcon from '@mui/icons-material/Message';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
+import './CardSidebar.css';
 
-function CardSidebar() {
-    return (
-        <div className="cardSidebar">
-            <div className="cardSidebar_button">
-                <FavoriteIcon />
-                <p>Like</p>
-            </div>
-            <div className="cardSidebar_button">
-                <MessageIcon />
-                <p>Comment</p>
-            </div>
-            <div className="cardSidebar_button">
-                <BookmarkIcon />
-                <p>Save</p>
-            </div>
-        </div>
-    )
+function CardSidebar({ onCommentsClick }) {
+  return (
+    <div className="cardSidebar">
+      <div className="cardSidebar_button">
+        <FavoriteIcon />
+        <p>Like</p>
+      </div>
+      <div className="cardSidebar_button" onClick={onCommentsClick}>
+        <MessageIcon />
+        <p>Comment</p>
+      </div>
+      <div className="cardSidebar_button">
+        <BookmarkIcon />
+        <p>Save</p>
+      </div>
+    </div>
+  );
 }
 
 export default CardSidebar;
